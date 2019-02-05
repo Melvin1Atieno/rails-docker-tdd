@@ -11,6 +11,7 @@
             <td style="border: 1px solid black;height: 50px"><%= article.title %></td>
             <td style="border: 1px solid black"><%= article.text %></td>
             <td style="border: 1px solid black;"><%= link_to 'show', article_path(article)%></td>
+            <td style="border: 1px solid black;"><%= link_to 'Edit', edit_article_path(article)%></td>
         </tr>
     <% end %>
 </table>
