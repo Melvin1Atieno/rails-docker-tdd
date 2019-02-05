@@ -1,0 +1,18 @@
+<h1 style="margin-left: 25%">ALL ARTICLES</h1>
+
+<table style="border-collapse: collapse; border: 1px solid black; width: 80%;margin-left: 10%">
+    <tr>
+        <th style="border: 1px solid black">Title</th>
+        <th style="border: 1px solid black">Text<th>
+        <th></th>
+    </tr>
+    <% @articles.each do |article| %>
+        <tr>
+            <td style="border: 1px solid black;height: 50px"><%= article.title %></td>
+            <td style="border: 1px solid black"><%= article.text %></td>
+            <td style="border: 1px solid black;"><%= link_to 'show', article_path(article)%></td>
+        </tr>
+    <% end %>
+</table>
+
+<%=  link_to 'New article', new_article_path %>
