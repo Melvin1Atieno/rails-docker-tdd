@@ -12,6 +12,7 @@
             <td style="border: 1px solid black"><%= article.text %></td>
             <td style="border: 1px solid black;"><%= link_to 'show', article_path(article)%></td>
             <td style="border: 1px solid black;"><%= link_to 'Edit', edit_article_path(article)%></td>
+            <td style="border: 1px solid black"><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "This action cannot ber reversed. Are you sure?"} %></td>
         </tr>
     <% end %>
 </table>
