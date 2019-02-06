@@ -9,12 +9,14 @@ jobs:
     steps:
     # perform a git clone into the build environment
       - checkout
+        # specify commands to execute within the build
       - run:
-          name: add user
-          command: |
-            sudo cat /etc/passwd
-      # specify commands to execute within the build
+        # change file ownership 
+          name: change file ownership
+          command: sudo chown -R $USER:$USER .
+    
       - run:
+      #  build the image
           name : build the image 
           command:
             docker-compose up --build 
