@@ -3,15 +3,12 @@ version: 2
 jobs:
 # Tells circleCi to use a machine executer
   build:
-    machine: true
+    machine:
+      image: circleci/classic:201808-01
     # specifies all the commands that will be executed during this build
     steps:
     # perform a git clone into the build environment
       - checkout
-      # Permission Denied When Creating Directory or Writing a File
-      - run: docker -v
-      - run: docker-compose -v
-      - run: chown -R $USER:$USER tmp/
       # specify commands to execute within the build
       - run:
           name : build the image and run test
