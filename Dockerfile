@@ -20,7 +20,7 @@ RUN addgroup -S admin -g 1000 && adduser -S -g '' -u 1000 -G admin deploy
 
 ENV RAILS_ROOT /home/deploy/app
 ENV RAILS_LOG_TO_STDOUT 1
-ENV RAILS_ENV test
+ENV RAILS_ENV production
 
 USER deploy
 

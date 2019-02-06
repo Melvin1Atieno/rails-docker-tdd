@@ -16,4 +16,4 @@ jobs:
       - run:
           name: Run tests
           command:
-            echo 'docker-compose run web rails test' >> $BASH_ENV
+            echo 'docker-compose run app rails test' >> $BASH_ENV
