@@ -8,6 +8,8 @@ jobs:
     steps:
     # perform a git clone into the build environment
       - checkout
+      # Permission Denied When Creating Directory or Writing a File
+      - run: chown -R $USER:$USER tmp/
       # specify commands to execute within the build
       - run:
           name : build the image and run test
