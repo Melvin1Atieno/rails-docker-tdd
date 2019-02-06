@@ -18,4 +18,5 @@ jobs:
           name : build the image 
           command: |
             docker-compose up --build -d
+            docker-compose exec rails db:create
             docker-compose run app rails test
