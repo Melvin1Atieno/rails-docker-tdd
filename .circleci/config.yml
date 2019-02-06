@@ -1,0 +1,19 @@
+version: 2
+# represents a list of jobs that will be run
+jobs:
+# Tells circleCi to use a machine executer
+  build:
+    machine: true
+    # specifies all the commands that will be executed during this build
+    steps:
+    # perform a git clone into the build environment
+      - checkout
+      # specify commands to execute within the build
+      - run:
+          name : build the image
+          command: |
+            echo 'docker-compose up --build' >> $BASH_ENV
+      - run:
+          name: Run tests
+          command:
+            echo 'docker-compose run web rails test' >> $BASH_ENV
