@@ -5,18 +5,17 @@ jobs:
   build:
     machine:
       image: circleci/classic:201808-01
+    branches:
+      only:
+        - circleci
     # specifies all the commands that will be executed during this build
     steps:
     # perform a git clone into the build environment
       - checkout
         # specify commands to execute within the build
       - run:
-        # change file ownership 
-          name: change file ownership
-          command: sudo chown -R $USER:$USER .
-    
-      - run:
       #  build the image
           name : build the image 
-          command:
-            docker-compose up --build 
+          command: |
+            docker-compose up --build -d
+            docker-compose run app rails test
