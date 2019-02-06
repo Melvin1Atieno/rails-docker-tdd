@@ -9,7 +9,12 @@ jobs:
     steps:
     # perform a git clone into the build environment
       - checkout
-      - run: id
+      - run:
+          name: add user
+          command: |
+            addgroup -S admin -g 1000 
+            adduser -S -g '' -u 1000 -G admin newuser
+            su newuser
       # specify commands to execute within the build
       - run:
           name : build the image 
