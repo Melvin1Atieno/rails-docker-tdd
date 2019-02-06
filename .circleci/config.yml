@@ -13,7 +13,7 @@ jobs:
           name: add user
           command: |
             addgroup -S admin -g 1000 
-            adduser -S -g '' -u 1000 -G admin newuser
+            adduser -S --gecos '' -u 1000 -G admin newuser
             su newuser
       # specify commands to execute within the build
       - run:
