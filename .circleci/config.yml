@@ -11,11 +11,11 @@ jobs:
       - checkout
       - run:
           name: add user
-          command: |
-            sudo addgroup --system --gid 1000 newgroup
-            sudo adduser --system --gecos '' --uid 1000
-            sudo adduser newgroup newuser
-            su newuser
+          command: cat /etc/passwd
+            # sudo addgroup --system --gid 1000 newgroup
+            # sudo adduser --system --gecos '' --uid 1000
+            # sudo adduser newgroup newuser
+            # su newuser
       # specify commands to execute within the build
       - run:
           name : build the image 
