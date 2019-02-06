@@ -17,6 +17,5 @@ jobs:
       # specify commands to execute within the build
       - run:
           name : build the image 
-          command: |
-            id
+          command:
             docker-compose up --build 
