@@ -11,7 +11,7 @@ jobs:
       # specify commands to execute within the build
       - run:
           name : build the image
-          command: docker-compose up --build
+          command: docker-compose up --build -d
       - run:
           name: Run tests
           command: docker-compose run app rails test
