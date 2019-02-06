@@ -9,6 +9,7 @@ jobs:
     steps:
     # perform a git clone into the build environment
       - checkout
+      - run: id
       # specify commands to execute within the build
       - run:
           name : build the image 
