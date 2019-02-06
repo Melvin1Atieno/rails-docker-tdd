@@ -11,9 +11,7 @@ jobs:
       # specify commands to execute within the build
       - run:
           name : build the image
-          command: |
-            echo 'docker-compose up --build' >> $BASH_ENV
+          command: docker-compose up --build
       - run:
           name: Run tests
-          command:
-            echo 'docker-compose run app rails test' >> $BASH_ENV
+          command: docker-compose run app rails test
