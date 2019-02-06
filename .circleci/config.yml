@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: add user
-          command: cat /etc/passwd
+          command:sudo cat /etc/passwd
             # sudo addgroup --system --gid 1000 newgroup
             # sudo adduser --system --gecos '' --uid 1000
             # sudo adduser newgroup newuser
