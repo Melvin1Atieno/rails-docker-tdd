@@ -13,7 +13,6 @@ jobs:
           name: add user
           command: |
             sudo cat /etc/passwd
-            su ubuntu
       # specify commands to execute within the build
       - run:
           name : build the image 
